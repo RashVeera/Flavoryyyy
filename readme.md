@@ -1,6 +1,6 @@
 # Food Ordering App
 
-- Install Parcel (Buneler)
+- Install Parcel (Bundler)
 - Install React and React DOM 
 
 

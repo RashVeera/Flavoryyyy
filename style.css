@@ -31,6 +31,23 @@
     padding-right: 1rem;
 }
 
+.filter-btn{
+    background-color: bisque;
+    color: black;
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "AvantGarde";
+
+  
+}
+.filter-btn:hover{
+    cursor: pointer;
+
+}
 .nav-items>ul>.search>.search-icon{
     width: 20px;
     height: 20px;
@@ -70,6 +87,10 @@ body{
 .res-card-food{
     width: 200px;
     height: 150px;
+}
+.res-card:hover{
+    border: 1px solid white;
+    cursor: pointer;
 }
 
 .res-container{

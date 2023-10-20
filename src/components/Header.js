@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import companylogo from '../../images/icons8-food-delivery-32.png';
 import offers from '../../images/offers.png'
 import search from '../../images/search.png';
 const Header = () =>{
+    const [btnName,setbtnName]=useState("Login")
     return (
         <div className="header">
             <img className="logo" src={companylogo}/>
@@ -17,6 +19,9 @@ const Header = () =>{
                     <li>Help</li>
                     <li>Rashika</li>
                     <li>Cart</li>
+                    <button className='filter-bt' onClick={()=>{
+                        btnName==="Login"?setbtnName("Logout"):setbtnName("Login")
+                    }}>{btnName}</button>
                 </ul>
                 </div>
     

@@ -1,10 +1,10 @@
-import ResContainer from "./RestaurantContainer";
-const Bodies = () => {
-    return (
-       <div className="body-content">
-           <ResContainer/>
-       </div>
-    )
-   }
+// import ResContainer from "./RestaurantContainer";
+// const Bodies = () => {
+//     return (
+//        <div className="body-content">
+//            <ResContainer/>
+//        </div>
+//     )
+//    }
 
-   export default Bodies;
+//    export default Bodies;

@@ -135,7 +135,7 @@ const resList= [
           "Desserts",
           "Beverages"
         ],
-        "avgRating": 4.3,
+        "avgRating": 3.3,
         "feeDetails": {
           "restaurantId": "63004",
           "fees": [
@@ -153,7 +153,7 @@ const resList= [
           "totalFee": 3100
         },
         "parentId": "4925",
-        "avgRatingString": "4.3",
+        "avgRatingString": "3.3",
         "totalRatingsString": "10K+",
         "sla": {
           "deliveryTime": 36,
@@ -271,7 +271,7 @@ const resList= [
           "Bakery",
           "Healthy Food"
         ],
-        "avgRating": 4.3,
+        "avgRating": 3.3,
         "veg": true,
         "feeDetails": {
           "restaurantId": "71758",
@@ -290,7 +290,7 @@ const resList= [
           "totalFee": 4000
         },
         "parentId": "5655",
-        "avgRatingString": "4.3",
+        "avgRatingString": "2.3",
         "totalRatingsString": "5K+",
         "sla": {
           "deliveryTime": 27,
@@ -422,7 +422,7 @@ const resList= [
           "Punjabi",
           "Raja"
         ],
-        "avgRating": 4.3,
+        "avgRating": 2.3,
         "feeDetails": {
           "restaurantId": "201166",
           "fees": [
@@ -551,7 +551,7 @@ const resList= [
           "Ice Cream",
           "Desserts"
         ],
-        "avgRating": 4.6,
+        "avgRating": 3.6,
         "veg": true,
         "feeDetails": {
           "restaurantId": "356208",

@@ -60,7 +60,7 @@
     font-family: "AvantGarde"; */
 
 }
-.filter-btn{
+.filterbtn{
     background-color: bisque;
     color: black;
     border: none;
@@ -73,7 +73,35 @@
 
   
 }
-.filter-btn:hover,.filter-bt:hover{
+
+.apply-filterbtn{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "AvantGarde";
+    margin: 0.5rem;
+}
+
+.searchs,.search-filter{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "AvantGarde";
+    margin: 0.5rem;
+}
+
+
+.filterbtn:hover,.filter-bt:hover,.apply-filterbtn:hover{
     cursor: pointer;
 
 }

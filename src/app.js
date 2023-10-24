@@ -7,6 +7,7 @@ import Help from "./components/Help";
 import Offers from "./components/Offers";
 import Error from "./components/Error"
 import RestaurantMenu from "./components/RestaurantMenu";
+import About from "./components/About";
 const AppLayout= () =>{
 return (
     <div className="Applayout">
@@ -26,6 +27,10 @@ const AppRoutes=createBrowserRouter([
     {
         path:'/help',
         element:<Help/>,
+        errorElement:<Error/>
+    }, {
+        path:'/about',
+        element:<About/>,
         errorElement:<Error/>
     },
     {

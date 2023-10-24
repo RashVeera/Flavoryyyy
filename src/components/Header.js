@@ -21,7 +21,7 @@ const Header = () =>{
                         
                         <img className="search-icon" src={offers} /><Link className='links' to="/offers"><li>Offers</li></Link></div>
                         <Link className='links' to="/help"><li>Help</li></Link>
-                    <li>Rashika</li>
+                    <Link  className='links' to="/about"><li>Rashika</li></Link>
                     <li>Cart</li>
                     <button className='filter-bt' onClick={()=>{
                         btnName==="Login"?setbtnName("Logout"):setbtnName("Login")

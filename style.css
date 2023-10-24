@@ -1,36 +1,140 @@
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: black;
+    background-color: white;
     padding: 1rem;
     border-bottom: 1px solid bisque;
     position: sticky;
     top:0;
 }
+.res-menu-items{
+    width: 90%;
+}
 
-.header>.logo{
+.image-item{
+    width: 10%;
+}
+
+.res-menu-details{
+    border-bottom:  1px dotted gray;
+    padding-bottom: 0.3rem;
+}
+
+.item-parent{
+    display: flex;
+    border-bottom: 1px dotted gray;
+    padding: 0.4rem;
+}
+
+
+.image-item-img{
+    width: 100px;
+    height: 100px;
+}
+
+.hide{
+    display:none ;
+}
+.show{
+    display: block;
+}
+
+.item-side{
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow-down{
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.item-name{
+    font-weight: 700;
+   
+    color: #282c3f;
+}
+
+.item-price{
+    padding: 0rem;
+    margin: 0.3rem 0rem;
+    font-size: 13px;
+    font-weight: 200;
+    color: #282c3f;
+}
+
+.item-description{
+    color: rgba(40,44,63,.45);
+    font-size: smaller;
+}
+
+.restaurant-menu-card{
+    width: 50vw;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid black; */
+    margin-left: 20%;
+    font-family: sans-serif;
+}
+
+.shortly{
+    width: 250px;
+    height: 300px;
+}
+
+.error-filter-button{
+    background-color: #fc8019;
+    color: white;
+    padding: 0.8rem 1rem;
+    border: none;
+    margin-top: 1rem;
+}
+
+.header .logo{
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 .news{
-    color: white;
+    color: black;
 }
-.header>.search>.search-icon{
+.header>Link>.search>.search-icon{
     width: 10px;
     height: 10px;
 }
 
-.nav-items>ul{
+.links{
+    color: black;
+    list-style-type: none;
+    text-decoration: none;
+   
+}
+
+.link{
+    color: white;
+    font-weight: bold;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.nav-items ul{
     display: flex;
     gap:1rem;
     list-style-type: none;
+    text-decoration: none;
+  
 }
-.nav-items>ul li{
+.nav-items ul li{
     font-size: medium;
     font-weight: bold;
-    color: beige;
+    color: black;
     padding-right: 1rem;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .shimmer-card{
@@ -48,9 +152,17 @@
     justify-content: space-evenly;
 }
 
+.error-page{
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .filter-bt{
-    background-color: bisque;
-    color: black;
+    background-color: white;
+    font-weight: bolder;
     border: none;
     /* padding: 0.5rem; */
     text-align: center;
@@ -61,7 +173,7 @@
 
 }
 .filterbtn{
-    background-color: bisque;
+   
     color: black;
     border: none;
     padding: 0.5rem;
@@ -87,8 +199,9 @@
     margin: 0.5rem;
 }
 
+
 .searchs,.search-filter{
-    background-color: white;
+    background-color: bisque;
     color: black;
     border: none;
     padding: 0.5rem;
@@ -98,6 +211,10 @@
     font-size: 16px;
     font-family: "AvantGarde";
     margin: 0.5rem;
+}
+
+.searchs:hover{
+    background-color: lightgray;
 }
 
 
@@ -125,13 +242,13 @@
 }
 
 .res-card{
-    background-color: bisque;
+  
     max-width:200px ;
     padding: 1rem;
 
 }
 body{
-    background-color: black;
+    background-color: white;
 }
 .res-card>h2,.res-card>h3,.res-card>h5{
     margin: 0px;
@@ -146,7 +263,7 @@ body{
     height: 150px;
 }
 .res-card:hover{
-    border: 1px solid white;
+    transform: scale(0.90);
     cursor: pointer;
 }
 

@@ -2,21 +2,25 @@ import { useState } from 'react';
 import companylogo from '../../images/icons8-food-delivery-32.png';
 import offers from '../../images/offers.png'
 import search from '../../images/search.png';
+import { Link } from 'react-router-dom';
 const Header = () =>{
     const [btnName,setbtnName]=useState("Login")
     return (
         <div className="header">
-            <img className="logo" src={companylogo}/>
+            <Link to="/"><img className="logo" src={companylogo}/></Link>
             {/* <div className="search">
                <img className="search-icon" src={search}/> 
                <div>Search</div>
             </div> */}
             <div className="nav-items">
                 <ul>
-                    <div className="search"><img className="search-icon" src={search} /> <li>  Search</li></div>
+                    <div className="search">
+                        <img className="search-icon" src={search} /> <li>  Search</li></div>
                 
-                    <div className="search"><img className="search-icon" src={offers} /><li>Offers</li></div>
-                    <li>Help</li>
+                    <div className="search">
+                        
+                        <img className="search-icon" src={offers} /><Link className='links' to="/offers"><li>Offers</li></Link></div>
+                        <Link className='links' to="/help"><li>Help</li></Link>
                     <li>Rashika</li>
                     <li>Cart</li>
                     <button className='filter-bt' onClick={()=>{

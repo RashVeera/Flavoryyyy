@@ -2,6 +2,7 @@ import ResCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import resList from "../utils/mockData";
+import { Link } from "react-router-dom";
 
 const ResContainer = () =>{
     const [listofrestaurants,setlistofrestaurants]=useState([]);
@@ -15,7 +16,7 @@ const ResContainer = () =>{
 
 
     const fetchdata= async ()=>{
-        const data_from_api= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0568464&lng=80.2136567&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data_from_api= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.035713261544618&lng=80.19712787121533&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         json_data=await data_from_api.json();
         setlistofrestaurants(json_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfiltereddata(json_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -39,24 +40,33 @@ const ResContainer = () =>{
 
 
 <input type="text" className="searchs" value={types} onChange={(e)=>{
-                    settypes(e.target.value)
-                }} placeholder="search"/> 
+                    settypes(e.target.value)                 
+                }} onKeyDown={ (e)=>{
+                    if (e.code=="Enter"){
+                        console.log(types)
+                        const searchfilter=listofrestaurants.filter( (restaurants)=>(
+                            restaurants.info.name.toLowerCase().includes(types.toLowerCase())))
+                            setfiltereddata(searchfilter)
+                            // settoggle(!toggle)
+                            // setfilterbtn('filterbtn')
+                    }
+                    console.log(e)
+                }
 
-        <button className="search-filter" onClick={
+                } placeholder="search"/> 
+
+        {/* <button className="search-filter" onClick={
             ()=>{
           
-               const searchfilter=listofrestaurants.filter( (restaurants)=>(
-                restaurants.info.name.toLowerCase().includes(types.toLowerCase())
-                
+                       
             ))
-            setfiltereddata(searchfilter);
-            settoggle(!toggle)
+         
             }
-        }> Search</button>
+        }> Search</button> */}
         
         <div className="res-container">
                   { filtereddata.map( (restaurant) => (
-                         <ResCard key={restaurant.info.id} resData={restaurant} />
+                     <Link className="links" to={"/restaurant/"+restaurant.info.id}>  <ResCard key={restaurant.info.id} resData={restaurant} /></Link>  
                   ))        
                    }
                </div>

@@ -5,18 +5,28 @@ class About extends React.Component{
 
     constructor(props){
         super(props);
-        console.log("Parent component")
+        console.log("Parent constructor")
     }
+
+
     componentDidMount(){
         console.log("Parent Component did mount")
     }
+
+    
+    componentDidUpdate(){
+        console.log("Parent  update")
+    }
+
+    componentWillUnmount(){
+        console.log(" Parent  unmounted")
+    }
     render(){
+        console.log("Parent Render")
         return (
             <>
             <div>This is a sample Food ordering application</div>
             <UserClass name="Rashika" Location="Chennai"/>
-            <UserClass name="Rashika2" Location="Chennai2"/>
-            <UserClass2 name="Rashika2" Location="Chennai2"/>
             </>
             
         )

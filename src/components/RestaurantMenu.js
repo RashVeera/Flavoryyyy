@@ -3,18 +3,12 @@ import Shimmer from "./Shimmer";
 import Shimmer from "./Shimmer";
 import arrow from "../../images/down-arrow.png";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 const RestaurantMenu =() =>{
-    const [restaurantInfo,setrestaurantInfo]=useState(null)
+   
     const {resId}=useParams();
-    useEffect(()=>{
-        fetchMenu();
-    },[]) 
+    restaurantInfo=useRestaurantMenu(resId)
 
-    const fetchMenu=async ()=>{
-        const data=await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.035713261544618&lng=80.19712787121533&restaurantId="+resId+"&catalog_qa=undefined&submitAction=ENTER")
-        const json_data=await data.json();
-         setrestaurantInfo(json_data)
-    }
 
     if (restaurantInfo==null){
         return <Shimmer/>
@@ -43,9 +37,9 @@ const RestaurantMenu =() =>{
 
 {
 itemCards.map((ele)=> (
-    <div className="item-parent">
+    
+    <div key={ele.card.info.id}  className="item-parent">
      <div className="res-menu-items">
-
         <span className="item-name">{ele.card.info.name}</span>
 
         <p className="item-price">{ "₹ " + ele.card.info.price/100 }</p>

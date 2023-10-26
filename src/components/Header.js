@@ -3,11 +3,19 @@ import companylogo from '../../images/icons8-food-delivery-32.png';
 import offers from '../../images/offers.png'
 import search from '../../images/search.png';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 const Header = () =>{
     const [btnName,setbtnName]=useState("Login")
+    const state= useOnlineStatus()
+
     return (
         <div className="header">
-            <Link to="/"><img className="logo" src={companylogo}/></Link>
+            <Link to="/">
+                <>
+                <img className="logo" src={companylogo}/>
+                <span className={ state?"dot-online":"dot-offline"}></span>
+            </>
+            </Link>
             {/* <div className="search">
                <img className="search-icon" src={search}/> 
                <div>Search</div>

@@ -6,11 +6,11 @@ class UserClass2 extends React.Component{
         this.state={
             count:1
         }
-        console.log("Child component")
+        // console.log("Child component")
     }
 
     componentDidMount(){
-        console.log("Child component did mount")
+        // console.log("Child component did mount")
     }
     render(){
         return (
@@ -25,7 +25,7 @@ class UserClass2 extends React.Component{
         }>-</button>
             <h3>Name : {this.props.name}</h3>
             <h3>Location : {this.props.Location}</h3>
-            {console.log("Child render")}
+            {/* {console.log("Child render")} */}
             </>
         )
     }

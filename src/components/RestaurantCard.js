@@ -5,11 +5,11 @@ const ResCard = (props) =>{
     const {
         cloudinaryImageId,costForTwo,cuisines,name,avgRating,areaName,locality
     }=resData?.info
-    console.log(resData)
+    // console.log(resData)
     return resData==undefined? (<Shimmer/>) : (
     
         <div className="res-card">
-            {console.log(areaName)}
+            {/* {console.log(areaName)} */}
             <img className="res-card-food" src={CDN_URL+cloudinaryImageId} />
             <h2>{name}</h2>
             <h3>{avgRating}</h3> 

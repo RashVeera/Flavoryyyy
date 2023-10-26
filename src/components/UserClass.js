@@ -9,27 +9,27 @@ class UserClass extends React.Component{
                 Location:'Dummy',
             }
         }
-         console.log(this.props.name+"Child constructor")
+        //  console.log(this.props.name+"Child constructor")
     }
 
     async componentDidMount(){
        const data= await fetch("https://api.github.com/users/RashVeera");
        const data_json=await data.json();
-       console.log("child did mount"+data_json)
+    //    console.log("child did mount"+data_json)
        this.setState({
         userInfo:data_json
        })
     }
 
     componentDidUpdate(){
-        console.log("child did update")
+        // console.log("child did update")
     }
 
     componentWillUnmount(){
-        console.log("child has unmounted")
+        // console.log("child has unmounted")
     }
     render(){
-        console.log("Child Render")
+        // console.log("Child Render")
         const {name,location}=this.state.userInfo;
         return (
         <>

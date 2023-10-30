@@ -1,4 +1,4 @@
-import ResCard from "./RestaurantCard";
+import ResCard,{RestaurantCardwithOneDelivery} from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import resList from "../utils/mockData";
@@ -14,6 +14,8 @@ const ResContainer = () =>{
 
     const onlinestate=useOnlineStatus();
     
+    // console.log(listofrestaurants)
+    OneDeliveryResCard=RestaurantCardwithOneDelivery(ResCard);
 
     useEffect( ()=>{
         fetchdata();
@@ -85,7 +87,13 @@ const ResContainer = () =>{
         <div className="flex gap-3 ml-10 flex-wrap">
                   { filtereddata.map( (restaurant) => (
                      <Link className="links" key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}> 
-                      <ResCard key={restaurant.info.id} resData={restaurant} />
+                     {
+                        restaurant.info.aggregatedDiscountInfoV3.header ? (<OneDeliveryResCard key={restaurant.info.id} resData={restaurant}  />):
+                      (
+                         <ResCard key={restaurant.info.id} resData={restaurant}  />
+                         )
+
+                     }
                       </Link>  
                   ))        
                    }

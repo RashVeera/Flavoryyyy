@@ -2,6 +2,7 @@ import { CDN_URL } from "../utils/constant";
 import Shimmer from "./Shimmer";
 const ResCard = (props) =>{
     const {resData}=props;
+    // console.log(resData)
     const {
         cloudinaryImageId,costForTwo,cuisines,name,avgRating,areaName,locality
     }=resData?.info
@@ -17,6 +18,19 @@ const ResCard = (props) =>{
             <h5 className="">{(locality||areaName).charAt(0).toUpperCase() + (locality||areaName).slice(1).toLowerCase()} </h5>
         </div>
     )
+}
+
+export const RestaurantCardwithOneDelivery =(ResCard)=>{
+ return (props)=>{
+    // console.log(props.resData.info.aggregatedDiscountInfoV3.header)
+    return props==undefined? (<Shimmer/>) :  (
+        <div className="relative hover:scale-90">
+           <span className="bg-rose-500 text-white px-2 py-1 m-2  absolute left-2 rounded-r-lg z-10">{props.resData.info.aggregatedDiscountInfoV3.header}</span>
+            <ResCard {...props}/>
+
+        </div>
+    )
+ }
 }
 
 export default ResCard;

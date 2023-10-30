@@ -9,7 +9,7 @@ const Header = () =>{
     const state= useOnlineStatus()
 
     return (
-        <div className="flex items-center shadow-md my-2 p-2 bg-white  font-sans sticky top-0 justify-between"> 
+        <div className="flex items-center shadow-md my-2 p-2 bg-white z-20  font-sans sticky top-0 justify-between"> 
             <Link to="/">
                 <>
                 <img className="w-12" src={companylogo}/>

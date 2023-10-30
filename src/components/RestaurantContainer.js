@@ -37,13 +37,10 @@ const ResContainer = () =>{
     
         )
 
-      
-
-
     const fetchdata= async ()=>{
         const data_from_api= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.035713261544618&lng=80.19712787121533&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         json_data=await data_from_api.json();
-        // console.log(json_data)
+  
         setlistofrestaurants(json_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfiltereddata(json_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
@@ -51,8 +48,9 @@ const ResContainer = () =>{
 
 
     return  listofrestaurants.length===0? (<Shimmer/>): (
-        <>
-        <button className={filterbtn} onClick={()=>{
+        <div className="mx-3">
+            <div className="flex my-4 gap-10">
+        <button className="px-3 bg-slate-300  font-sans rounded-lg" style={{filterbtn}}  onClick={()=>{
             settoggle(!toggle)
             if (toggle){
                 const filtereddata=listofrestaurants.filter((res)=> res.info.avgRating > 4.0);
@@ -64,35 +62,27 @@ const ResContainer = () =>{
                 setfilterbtn('filterbtn')
             }
             
-        }}> Top Rated Restaurants</button>
+        }}> Top-rated Restaurants</button>
 
-
-<input type="text" className="searchs" value={types} onChange={(e)=>{
+<input className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-12.5 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" value={types} onChange={(e)=>{
                     settypes(e.target.value)                 
                 }} onKeyDown={ (e)=>{
                     if (e.code=="Enter"){
-                        // console.log(types)
                         const searchfilter=listofrestaurants.filter( (restaurants)=>(
                             restaurants.info.name.toLowerCase().includes(types.toLowerCase())))
                             setfiltereddata(searchfilter)
-                            // settoggle(!toggle)
-                            // setfilterbtn('filterbtn')
+                         
                     }
-                    // console.log(e)
+   
                 }
 
-                } placeholder="search"/> 
+                }  placeholder="Filter Restaurants..."/>
 
-        {/* <button className="search-filter" onClick={
-            ()=>{
-          
-                       
-            ))
-         
-            }
-        }> Search</button> */}
-        
-        <div className="res-container">
+
+
+
+        </div>
+        <div className="flex gap-3 ml-10 flex-wrap">
                   { filtereddata.map( (restaurant) => (
                      <Link className="links" key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}> 
                       <ResCard key={restaurant.info.id} resData={restaurant} />
@@ -100,7 +90,7 @@ const ResContainer = () =>{
                   ))        
                    }
                </div>
-               </>
+               </div>
     )
    }
    export default ResContainer;

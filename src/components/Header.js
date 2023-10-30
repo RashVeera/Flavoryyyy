@@ -9,10 +9,10 @@ const Header = () =>{
     const state= useOnlineStatus()
 
     return (
-        <div className="header">
+        <div className="flex items-center shadow-md my-2 p-2 bg-white  font-sans sticky top-0 justify-between"> 
             <Link to="/">
                 <>
-                <img className="logo" src={companylogo}/>
+                <img className="w-12" src={companylogo}/>
                 <span className={ state?"dot-online":"dot-offline"}></span>
             </>
             </Link>
@@ -21,17 +21,18 @@ const Header = () =>{
                <div>Search</div>
             </div> */}
             <div className="nav-items">
-                <ul>
-                    <div className="search">
-                        <img className="search-icon" src={search} /> <li>  Search</li></div>
+                <ul className='flex items-center'>
+                    <div className="search flex">
+                        <li>  Search</li>
+                        </div>
                 
-                    <div className="search">
+                    <div className="search flex items-center px-3">
                         
-                        <img className="search-icon" src={offers} /><Link className='links' to="/offers"><li>Offers</li></Link></div>
-                        <Link className='links' to="/help"><li>Help</li></Link>
-                    <Link  className='links' to="/about"><li>Rashika</li></Link>
-                    <li>Cart</li>
-                    <button className='filter-bt' onClick={()=>{
+                        <Link className='links' to="/offers"><li >Offers</li></Link></div>
+                        <Link className='px-2' to="/help"><li>Help</li></Link>
+                    <Link  className='px-2' to="/about"><li>Rashika</li></Link>
+                    <li className='px-2'>Cart</li>
+                    <button className='px-2' onClick={()=>{
                         btnName==="Login"?setbtnName("Logout"):setbtnName("Login")
                     }}>{btnName}</button>
                 </ul>

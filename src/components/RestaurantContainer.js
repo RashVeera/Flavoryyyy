@@ -1,9 +1,10 @@
 import ResCard,{RestaurantCardwithOneDelivery} from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import resList from "../utils/mockData";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserInfo from "../utils/UserInfo";
 
 const ResContainer = () =>{
     const [listofrestaurants,setlistofrestaurants]=useState([]);
@@ -11,6 +12,7 @@ const ResContainer = () =>{
     const [types,settypes]=useState('');
     const [toggle,settoggle]=useState(true)
     const [filterbtn,setfilterbtn]=useState('filterbtn')
+   const {LoggedInUser,setuserName} =useContext(UserInfo)
 
     const onlinestate=useOnlineStatus();
     
@@ -45,6 +47,7 @@ const ResContainer = () =>{
   
         setlistofrestaurants(json_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfiltereddata(json_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        // console.log(listofrestaurants)
     }
   
 
@@ -80,7 +83,8 @@ const ResContainer = () =>{
 
                 }  placeholder="Filter Restaurants..."/>
 
-
+                <input className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-12.5 text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" value={LoggedInUser} onChange={(e)=>{setuserName(e.target.value)}} />
+              
 
 
         </div>
@@ -92,12 +96,13 @@ const ResContainer = () =>{
                       (
                          <ResCard key={restaurant.info.id} resData={restaurant}  />
                          )
-
+                      
                      }
                       </Link>  
                   ))        
                    }
                </div>
+             
                </div>
     )
    }

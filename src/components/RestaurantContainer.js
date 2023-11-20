@@ -92,7 +92,7 @@ const ResContainer = () =>{
                   { filtereddata.map( (restaurant) => (
                      <Link className="links" key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}> 
                      {
-                        restaurant.info.aggregatedDiscountInfoV3.header ? (<OneDeliveryResCard key={restaurant.info.id} resData={restaurant}  />):
+                        restaurant.info.aggregatedDiscountInfoV3 ? (<OneDeliveryResCard key={restaurant.info.id} resData={restaurant}  />):
                       (
                          <ResCard key={restaurant.info.id} resData={restaurant}  />
                          )

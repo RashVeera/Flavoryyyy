@@ -25,7 +25,7 @@ export const RestaurantCardwithOneDelivery =(ResCard)=>{
     // console.log(props.resData.info.aggregatedDiscountInfoV3.header)
     return props==undefined? (<Shimmer/>) :  (
         <div className="relative hover:scale-90">
-           <span className="bg-rose-500 text-white px-2 py-1 m-2  absolute left-2 rounded-r-lg z-10">{props.resData.info.aggregatedDiscountInfoV3.header}</span>
+           <span className="bg-rose-500 text-white px-2 py-1 m-2  absolute left-2 rounded-r-lg z-10">One Delivery</span>
             <ResCard {...props}/>
 
         </div>
